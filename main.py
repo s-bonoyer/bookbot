@@ -1,4 +1,6 @@
-from stats import num_chars
+from stats import num_chars, num_words
 
-num_chars()
+char_count = num_chars()
 
+num_words()
+print(char_count)

@@ -14,12 +14,11 @@ def num_chars():
     path = "books/frankenstein.txt"
     text = get_book_text(path)
     lowers = text.lower()
-    all_words = text.split()
+    all_words = lowers.split()
     for word in all_words:
-        
-    for char in all_chars:
-        if char in char_count:
-            char_count[char] += 1
-        else:
-            char_count[char] = 1
-    print(char_count)
+        for char in word:
+            if char in char_count:
+                char_count[char] += 1
+            else:
+                char_count[char] = 1
+    return char_count
