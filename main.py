@@ -1,1 +1,4 @@
-print("greetings boots")
+from stats import num_chars
+
+num_chars()
+
