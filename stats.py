@@ -7,7 +7,7 @@ def num_words():
     text = get_book_text(path)
     book_words = text.split()
     words_total = len(book_words)
-    print(f"{words_total} words found in the document")
+    return words_total
 
 def num_chars():
     char_count = {}
@@ -22,3 +22,14 @@ def num_chars():
             else:
                 char_count[char] = 1
     return char_count
+
+def dict_sort():
+    alpha_dict = []
+    dict = num_chars()
+    for entry in dict:
+        if entry.isalpha() == True:
+            char_dict = {"char": entry, "num": dict[entry]}
+            alpha_dict.append(char_dict)
+    
+    alpha_dict.sort(reverse=True, key=lambda check: check["num"])
+    return alpha_dict
