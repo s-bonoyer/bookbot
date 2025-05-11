@@ -2,16 +2,14 @@ def get_book_text(path):
     with open(path) as book:
         return book.read()
 
-def num_words():
-    path = "books/frankenstein.txt"
+def num_words(path):
     text = get_book_text(path)
     book_words = text.split()
     words_total = len(book_words)
     return words_total
 
-def num_chars():
+def num_chars(path):
     char_count = {}
-    path = "books/frankenstein.txt"
     text = get_book_text(path)
     lowers = text.lower()
     all_words = lowers.split()
@@ -23,9 +21,9 @@ def num_chars():
                 char_count[char] = 1
     return char_count
 
-def dict_sort():
+def dict_sort(path):
     alpha_dict = []
-    dict = num_chars()
+    dict = num_chars(path)
     for entry in dict:
         if entry.isalpha() == True:
             char_dict = {"char": entry, "num": dict[entry]}
